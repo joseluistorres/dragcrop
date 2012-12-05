@@ -139,7 +139,6 @@
 
 		    });
 		
-		
 			//draggable
 			crop_input.mousedown(function () {
 
