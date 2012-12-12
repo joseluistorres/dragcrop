@@ -49,6 +49,14 @@ div#show_crop_x {
      <div id="show_crop_w"></div><br>
      <div id="show_crop_h"></div><br>
   </div>
+  <hr>
+  <form id="edit_image_123" action="crop_it" method="post">
+        <input id="crop_x" name="image[crop_x]" type="hidden" >
+        <input id="crop_y" name="image[crop_y]" type="hidden" >
+        <input id="crop_w" name="image[crop_w]" type="hidden" >
+        <input id="crop_h" name="image[crop_h]" type="hidden" >
+  </form>
+  <div id="edit_image_container_2" ></div>
 </div>
 <script>
 
@@ -63,6 +71,16 @@ $(document).ready(function () {
 		view_port_width: 208,
 		view_port_height: 255,
 		form_id: 'edit_image_12345'
+    });
+    
+    $('div#edit_image_container_2').dragCrop({
+        src_image: 'images/nird.jpg',
+        image_id: '123',
+		image_width: 640,
+		image_height: 426,
+		view_port_width: 300,
+		view_port_height: 282,
+		form_id: 'edit_image_123'
     });
     
 
