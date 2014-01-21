@@ -2,9 +2,9 @@
  * 	Drag and Crop Plugin - jQuery plugin
  * 	Dynamic tool to enable an image to be movable to crop it with a viewport
  *	written by Jose Luis Torres	
- *	http://www.vulcanik.com
+ *	http://www.joseluistorres.me
  *
- *	Copyright (c) 2012 Jose Luis Torres (http://www.vulcanik.com)
+ *	Copyright (c) 2013 Jose Luis Torres (http://www.joseluistorres.me)
  *	Licensed under the MIT License
  *
  *	Built for jQuery library
@@ -72,8 +72,12 @@
             $save_cropt_container.appendTo($this);
             $zoom_in = $('<div id="zoom_in_' + options.image_id + '" title="Zoom In">');
             $zoom_out = $('<div id="zoom_out_' + options.image_id + '" title="Zoom Out">');
+            $save_button = $('<div class="crop_it">Save</div>');
+            $cancel_button = $('<div class="cancel-it">Cancel</div>');
             $zoom_in.appendTo($save_cropt_container);
             $zoom_out.appendTo($save_cropt_container);
+            $save_button.appendTo($save_cropt_container);
+            $cancel_button.appendTo($save_cropt_container);
 
             $save_cropt_container.css({
                 'position': 'absolute',
@@ -105,7 +109,6 @@
                 'top': '-5px',
                 'cursor': 'pointer'
             });
-
 
             // enable zoom in
             $zoom_in.bind('click', function () {
@@ -213,6 +216,15 @@
 
                 });
 
+            });
+
+            $cancel_button.bind('click', function () {
+                options.crop_input.css({
+                    'left': -(options.image_width - options.view_port_width) / 2,
+                    'top': -(options.image_height - options.view_port_height) / 2,
+                    'width': options.image_width,
+                    'height': options.image_height
+                });
             });
 
             $(document).mouseup(function () {
