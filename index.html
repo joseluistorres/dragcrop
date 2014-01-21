@@ -33,7 +33,43 @@ div.edit_image_tooltip {
 div#show_crop_x {
      padding-top:10px;
 }
- 
+
+.crop_it {
+    margin-left: 100px;
+    position: relative;
+    top: -30px;
+    left: 28px;
+    font-family:verdana;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8573A, endColorstr=#D97A5B);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#c8573a), to(#d97a5b));
+    background-image: -webkit-linear-gradient(top, #c8573a, #d97a5b);
+    background-image: -moz-linear-gradient(top, #c8573a, #d97a5b);
+    background-image: -o-linear-gradient(top, #c8573a, #d97a5b);
+    background-image: -ms-linear-gradient(top, #c8573a, #d97a5b);
+    background-image: linear-gradient(to bottom, #c8573a, #d97a5b);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    text-shadow: 0 1px 1px rgba(126, 43, 25, 0.8);
+    border: 1px solid #B5420B;
+    border-radius: 3px 3px 3px 3px;
+    color: #FAE7DF;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    line-height: 25px;
+    width: 47px;
+    height: 28px;
+}
+
+.cancel-it {
+    color: #FF0000;
+    font-family: verdana;
+    font-size: 12px;
+    left: 80px;
+    position: relative;
+    top: -52px;
+}
  </style>
 <div class="wrapper">
   <form id="edit_image_12345" action="crop_it" method="post">
@@ -62,27 +98,26 @@ div#show_crop_x {
 
 
 $(document).ready(function () {
-    
+
     $('div#edit_image_container').dragCrop({
         src_image: 'images/ultimate-wolverine-vs-hulk.jpg',
         image_id: '12345',
-		image_width: 800,
-		image_height: 600,
-		view_port_width: 208,
-		view_port_height: 255,
-		form_id: 'edit_image_12345'
+        image_width: 800,
+        image_height: 600,
+        view_port_width: 208,
+        view_port_height: 255,
+        form_id: 'edit_image_12345'
     });
     
     $('div#edit_image_container_2').dragCrop({
         src_image: 'images/nird.jpg',
         image_id: '123',
-		image_width: 640,
-		image_height: 426,
-		view_port_width: 300,
-		view_port_height: 282,
-		form_id: 'edit_image_123'
+        image_width: 640,
+        image_height: 426,
+        view_port_width: 300,
+        view_port_height: 282,
+        form_id: 'edit_image_123'
     });
-    
 
 });
 </script>
